@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" 	rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Reloj</title>
+	<style type="text/css">
+		@media only screen and (max-width: 770px) and (min-width: 300px){
+	display: block;
+	width: 100%;
+}
+
+body{
+	background:black;
+} 
+
+.contenedor{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.reloj{
+	padding-top: 25%;
+	font-size: 500%;
+	font-family: 'PT Sans', sans-serif;	
+	color: #63ed28;
+	 
+	}
+
+
+.reloj:hover{
+	color: #3b9415;
+}
+	</style>
+</head>
+<body>
+<div class="contenedor">
+	<div class="reloj"></div>
+</div>
+
+
+<script>
+	function cargarReloj(){
+// Parte de recopilacion de hora
+let fechaHora = new Date();
+let hora = fechaHora.getHours();
+let minuto = fechaHora.getMinutes();
+let segundo = fechaHora.getSeconds();
+
+// Sumar cero.
+if (minuto < 10 ) {
+	minuto = "0" + minuto;
+}
+
+if (segundo < 10){
+	segundo = "0" + segundo;
+}
+
+//funcionamiento de reloj
+let tiempo = hora + ":" + minuto + ":" + segundo
+let reloj = document.querySelector(".reloj")
+reloj.innerText = tiempo 
+
+
+//recarga pagina automático
+setTimeout(cargarReloj,500)
+
+}
+
+
+cargarReloj();
+</script>
+</body>
+</html>

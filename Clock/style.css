@@ -1,0 +1,27 @@
+@media only screen and (max-width: 770px) and (min-width: 300px){
+	display: block;
+	width: 100%;
+}
+
+body{
+	background:black;
+} 
+
+.contenedor{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.reloj{
+	padding-top: 25%;
+	font-size: 500%;
+	font-family: 'PT Sans', sans-serif;	
+	color: #63ed28;
+	 
+	}
+
+
+.reloj:hover{
+	color: #3b9415;
+}
